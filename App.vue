@@ -8,7 +8,6 @@
             <v-card-subtitle class="font-weight-bold"> {{message.name}} </v-card-subtitle>
             <v-card-text>{{message.text}}</v-card-text>
           </v-card>
-          teste
           <v-card v-else outlined class="ma-3 purple accent-4">
             <v-card-subtitle class="font-weight-bold"> {{message.name}} </v-card-subtitle>
             <v-card-text>{{message.text}}</v-card-text>
