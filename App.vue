@@ -1,10 +1,10 @@
 <template>
   <v-app>
     <v-main>
-      <v-app-bar color="green">{{nome}}</v-app-bar>
+      <v-app-bar color="green">{{firstName(nome)}}</v-app-bar>
         <div v-for="(message, index) in messages" :key="index" class="message-container">
           <v-card outlined class="ma-3" :class="message.name == 'Eu' ? 'purple lighten-2' : 'teal accent-4'">
-            <v-card-subtitle class="font-weight-bold"> {{message.name}} </v-card-subtitle>
+            <v-card-subtitle class="font-weight-bold"> {{message.name == 'Eu' ? 'Eu' : firstName(message.name)}} </v-card-subtitle>
             <v-card-text>{{message.text}}</v-card-text>
           </v-card>
           <v-card v-else outlined class="ma-3 purple accent-4">
@@ -51,6 +51,9 @@
         }
         this.messages.push(message)
         this.campo_text = ""
+      },
+      firstName(name) {
+        return name.split(' ')[0]
       }
     }
   }
