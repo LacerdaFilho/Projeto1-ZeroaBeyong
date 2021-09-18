@@ -2,9 +2,8 @@
   <v-app>
     <v-main>
       <v-app-bar color="green">{{nome}}</v-app-bar>
-      <div class="message-container">
-        <div v-for="(message, index) in messages" :key="index">
-          <v-card v-if="message.name != 'Eu'" outlined class="ma-3 teal accent-4">
+        <div v-for="(message, index) in messages" :key="index" class="message-container">
+          <v-card outlined class="ma-3" :class="message.name == 'Eu' ? 'purple lighten-2' : 'teal accent-4'">
             <v-card-subtitle class="font-weight-bold"> {{message.name}} </v-card-subtitle>
             <v-card-text>{{message.text}}</v-card-text>
           </v-card>
@@ -13,7 +12,6 @@
             <v-card-text>{{message.text}}</v-card-text>
           </v-card>
         </div>
-      </div>
       <v-app-bar color="#424242" bottom fixed>
         <v-text-field @keyup.enter="sendMessage" v-model="campo_text" solo hide-details label="Enviar mensagem ..."></v-text-field>
         <v-btn @click="sendMessage" x-large icon color="blue"></v-btn>
