@@ -7,10 +7,6 @@
             <v-card-subtitle class="font-weight-bold"> {{message.name == 'Eu' ? 'Eu' : firstName(message.name)}} </v-card-subtitle>
             <v-card-text>{{message.text}}</v-card-text>
           </v-card>
-          <v-card v-else outlined class="ma-3 purple accent-4">
-            <v-card-subtitle class="font-weight-bold"> {{message.name}} </v-card-subtitle>
-            <v-card-text>{{message.text}}</v-card-text>
-          </v-card>
         </div>
       <v-app-bar color="#424242" bottom fixed>
         <v-text-field @keyup.enter="sendMessage" v-model="campo_text" solo hide-details label="Enviar mensagem ..."></v-text-field>
